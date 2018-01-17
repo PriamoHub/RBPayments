@@ -1,0 +1,2 @@
+# pageObjectTemplate
+"# RBPayments" 
