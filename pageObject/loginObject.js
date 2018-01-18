@@ -13,10 +13,10 @@ class Login extends Page {
 
     open() {
         super.open('login');
-        browser.waitForVisible('#login-form');
+        browser.waitForExist("[name='loginForm']");
     }
-    log() {
-        browser.submitForm('#login-form');
+    login() {
+        browser.click("[type='submit']");
     }
 }
 module.exports = new Login();

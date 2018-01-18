@@ -1,5 +1,5 @@
 exports.config = {
-    
+
     //
     // ==================
     // Specify Test Files
@@ -44,7 +44,7 @@ exports.config = {
         // 5 instances get started at a time.
         maxInstances: 5,
         //
-        browserName: 'firefox'
+        browserName: 'chrome'
     }],
     //
     // ===================
@@ -72,7 +72,7 @@ exports.config = {
     //
     // Set a base URL in order to shorten url command calls. If your url parameter starts
     // with "/", then the base url gets prepended.
-    baseUrl: 'http://localhost',
+    baseUrl: 'http://portal.rbpayments.com/#/',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
@@ -118,7 +118,12 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: http://webdriver.io/guide/testrunner/reporters.html
-    // reporters: ['dot'],
+    reporters: ['dot', 'junit'],
+       reporterOptions: {
+           junit: {
+               outputDir: './'
+           }
+       },
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
@@ -158,6 +163,13 @@ exports.config = {
     // before: function (capabilities, specs) {
     // },
     //
+
+    before: function() {
+    var chai = require('chai');
+    global.expect = chai.expect;
+    chai.Should();
+    browser.windowHandleMaximize();
+}
     /**
      * Hook that gets executed before the suite starts
      * @param {Object} suite suite details
