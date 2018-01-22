@@ -18,5 +18,9 @@ class Login extends Page {
     login() {
         browser.click("[type='submit']");
     }
+
+    forgotPass() {
+      browser.click("#forget-password");
+    }
 }
 module.exports = new Login();

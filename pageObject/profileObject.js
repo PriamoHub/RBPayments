@@ -1,7 +1,7 @@
 "use strict";
 var Page = require('./page.js')
 
-class Signup extends Page {
+class Profile extends Page {
 
     get email()                        { return $("[name='EmailAddress']").getValue(); }
     set email(v)                       {        $("[name='EmailAddress']").setValue(v); }
@@ -11,7 +11,7 @@ class Signup extends Page {
     set lastName(v)                    {        $("[name='LastName']").setValue(v); }
     get phoneNumber()                  { return $("[name='PhoneNumber']").getValue(); }
     set phoneNumber(v)                 {        $("[name='PhoneNumber']").setValue(v); }
-    get taxNumber()                    {   return $("[name='TaxNumber']").getValue(); }
+    get taxNumber()                    { return $("[name='TaxNumber']").getValue(); }
     set taxNumber(v)                   {        $("[name='TaxNumber']").setValue(v); }
     get password()                     { return $("[name='Password']").getValue(); }
     set password(v)                    {        $("[name='Password']").setValue(v); }
@@ -19,6 +19,10 @@ class Signup extends Page {
     set confirmPassword(v)             {        $("[name='confirmPassword']").setValue(v); }
     get userError()                    { return $("[ng-show='loginForm.UserName.$error.email && submitted']"); }
     get passError()                    { return $("[ng-show='loginForm.Password.$error.required && submitted']"); }
+
+    get currentPassword()              { return $("[name='OldPassword']").getValue(); }
+    set currentPassword(v)             {        $("[name='OldPassword']").setValue(v); }
+
 
 
 
@@ -38,27 +42,9 @@ class Signup extends Page {
     get country()                  { return $("[name='country']").getText('option:checked'); }
 
 
-    openSignup() {
-        super.open('signup');
-        browser.waitForExist("[name='userForm']");
-    }
-    completeSignUp() {
+    save() {
         browser.click("[type='submit']");
     }
 
-    cancelSignUp()
-    {
-      super.open('login');
-    }
-
-    bizAccount()
-    {
-      browser.click("[value='Business']");
-    }
-
-    addressDetails()
-    {
-      browser.click("[data-target='#addressDetails']");
-    }
 }
-module.exports = new Signup();
+module.exports = new Profile();
