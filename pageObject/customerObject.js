@@ -36,6 +36,10 @@ class Customer extends Page {
         browser.click("[ng-model='setAddress']");
       }
 
+      billAutomatic() {
+        browser.selectByVisibleText("[name='IsAutoBilled']", "Do not bill this user automatically");
+      }
+
       selectBusiness() {
         browser.click("[value='Personal']");
       }
