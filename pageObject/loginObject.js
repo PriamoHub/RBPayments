@@ -12,7 +12,7 @@ class Login extends Page {
     get greetings()             { return browser.element("#greetings");   }
 
     open() {
-        super.open('login');
+        super.open('#/login');
         browser.waitForExist("[name='loginForm']");
     }
     login() {
