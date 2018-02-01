@@ -19,6 +19,9 @@ exports.config = {
         signUp: [
             './test/signupTest.js',
         ],
+        signUpBizz: [
+            './test/signupBizzTest.js',
+        ],
         All: [
             './test/*.js',
         ]
