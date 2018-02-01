@@ -11,12 +11,12 @@ class Signup extends Page {
     set lastName(v)                    {        $("[name='LastName']").setValue(v); }
     get phoneNumber()                  { return $("[name='PhoneNumber']").getValue(); }
     set phoneNumber(v)                 {        $("[name='PhoneNumber']").setValue(v); }
-    get taxNumber()                    {   return $("[name='TaxNumber']").getValue(); }
+    get taxNumber()                    { return $("[name='TaxNumber']").getValue(); }
     set taxNumber(v)                   {        $("[name='TaxNumber']").setValue(v); }
     get password()                     { return $("[name='Password']").getValue(); }
     set password(v)                    {        $("[name='Password']").setValue(v); }
-    get confirmPassword()              { return $("[name='confirmPassword']").getValue(); }
-    set confirmPassword(v)             {        $("[name='confirmPassword']").setValue(v); }
+    get confirmPassword()              { return $("[name='ConfirmPassword']").getValue(); }
+    set confirmPassword(v)             {        $("[name='ConfirmPassword']").setValue(v); }
     get userError()                    { return $("[ng-show='loginForm.UserName.$error.email && submitted']"); }
     get passError()                    { return $("[ng-show='loginForm.Password.$error.required && submitted']"); }
 
@@ -39,9 +39,10 @@ class Signup extends Page {
 
 
     openSignup() {
-        super.open('signup');
-        browser.waitForExist("[name='userForm']");
+        super.open('#/signup');
+        browser.waitForEnabled("[name='EmailAddress']");
     }
+
     completeSignUp() {
         browser.click("[type='submit']");
     }

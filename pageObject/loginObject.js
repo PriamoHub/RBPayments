@@ -7,8 +7,6 @@ class Login extends Page {
     set username(v)             {        $("[name='UserName']").setValue(v); }
     get password()              { return $("[name='Password']").getValue(); }
     set password(v)             {        $("[name='Password']").setValue(v); }
-    get userError()           { return browser.element("[ng-show='loginForm.UserName.$error.email && submitted']"); }
-    get passError()           { return browser.element("[ng-show='loginForm.Password.$error.required && submitted']"); }
     get greetings()             { return browser.element("#greetings");   }
 
     open() {
@@ -18,9 +16,17 @@ class Login extends Page {
     login() {
         browser.click("[type='submit']");
     }
-
     forgotPass() {
       browser.click("#forget-password");
+    }
+    badUser(){
+      browser.waitForExist("[ng-show='loginForm.UserName.$error.required && submitted']")
+    }
+    badPass(){
+      browser.waitForExist("[ng-show='loginForm.Password.$error.required && submitted']")
+    }
+    waitForLogin(){
+      browser.waitForEnabled("[name='UserName']");
     }
 }
 module.exports = new Login();
