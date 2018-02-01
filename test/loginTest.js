@@ -27,7 +27,6 @@ describe('RBPAyments - Login Automated Testing', function () {
           Login.waitForLogin();
           Login.username = "";
           Login.password = "";
-
           Login.badUser();
           Login.badPass();
         });

@@ -38,13 +38,42 @@ class Signup extends Page {
     get country()                  { return $("[name='country']").getText('option:checked'); }
 
 
+    //Error Messages Element
+
+    invalidEmail(){
+      browser.waitForExist("[ng-show='userForm.EmailAddress.$error.required && submitted']");
+    }
+    invalidName(){
+      browser.waitForExist("[ng-show='userForm.FirstName.$error.required && submitted']");
+    }
+    invalidLastName(){
+      browser.waitForExist("[ng-show='userForm.LastName.$error.required && submitted']");
+    }
+    invalidPass()
+    {
+      browser.waitForExist("[ng-show='userForm.Password.$error.required && submitted']");
+    }
+    invalidPhone(){
+      browser.waitForExist("[ng-show='userForm.PhoneNumber.$error.required && submitted']");
+    }
+    invalidTax(){
+      browser.waitForExist("[ng-show='userForm.TaxNumber.$error.minlength && submitted']");
+    }
+    invalidConfirmPass(){
+      browser.waitForExist("[ng-show='userForm.ConfirmPassword.$error.required && submitted']");
+    }
+
+    //Buttons
+
     openSignup() {
         super.open('#/signup');
         browser.waitForEnabled("[name='EmailAddress']");
     }
 
     completeSignUp() {
+      browser.waitForEnabled("[type='submit']");
         browser.click("[type='submit']");
+
     }
 
     cancelSignUp()

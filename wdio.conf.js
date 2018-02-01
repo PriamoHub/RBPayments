@@ -38,20 +38,24 @@ exports.config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 1,
+    maxInstances: 10,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://docs.saucelabs.com/reference/platforms-configurator
     //
-    capabilities: [{
-        // maxInstances can get overwritten per capability. So if you have an in-house Selenium
-        // grid with only 5 firefox instances available you can make sure that not more than
-        // 5 instances get started at a time.
-        maxInstances: 1,
-        //
-        browserName: 'chrome'
-    }],
+    capabilities: {
+        myChromeBrowser: {
+            desiredCapabilities: {
+                browserName: 'chrome'
+            }
+        },
+        /*myFirefoxBrowser: {
+            desiredCapabilities: {
+                browserName: 'firefox'
+            }
+        }*/
+    },
     //
     // ===================
     // Test Configurations
@@ -81,7 +85,7 @@ exports.config = {
     baseUrl: 'http://portal.rbpayments.com/#/login/',
     //
     // Default timeout for all waitFor* commands.
-    waitforTimeout: 10000,
+    waitforTimeout: 100000,
     //
     // Default timeout in milliseconds for request
     // if Selenium Grid doesn't send response
@@ -112,7 +116,7 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['sauce','selenium-standalone'],
+    services: ['selenium-standalone'],
 
 
    // user: process.env.SAUCE_USERNAME,

@@ -28,5 +28,8 @@ class Login extends Page {
     waitForLogin(){
       browser.waitForEnabled("[name='UserName']");
     }
+    logOut(){
+      browser.click("[ng-click='logout()']");
+    }
 }
 module.exports = new Login();
