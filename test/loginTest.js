@@ -42,6 +42,7 @@ describe('RBPAyments - Login Automated Testing', function () {
           Login.username = "priamo.ramirez@gmail.com";
           Login.password = "B36i18e%";
           Login.login();
+          Login.successLogin();
           });
 
     });

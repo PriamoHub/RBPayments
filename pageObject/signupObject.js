@@ -82,9 +82,12 @@ class Signup extends Page {
       super.open('login'); }
 
     bizAccount(){
-      browser.click("[value='Business']"); }
+      browser.click("[value='Business']");
+      browser.waitForEnabled("[name='LegalName']");
+    }
 
     addressDetails() {
-    browser.click("[data-target='#addressDetails']"); }
+    browser.click("[data-target='#addressDetails']");
+    browser.waitForEnabled("[name='Address2']"); }
 }
 module.exports = new Signup();

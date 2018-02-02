@@ -14,8 +14,9 @@ class Login extends Page {
         browser.waitForExist("[name='loginForm']");
     }
     login() {
-        browser.click("[type='submit']");
-    }
+        browser.click("[type='submit']"); }
+    successLogin()
+    { browser.waitForExist("[href='#/customers/list']"); }
     forgotPass() {
       browser.click("#forget-password");
     }
@@ -27,9 +28,6 @@ class Login extends Page {
     }
     waitForLogin(){
       browser.waitForEnabled("[name='UserName']");
-    }
-    logOut(){
-      browser.click("[ng-click='logout()']");
     }
 }
 module.exports = new Login();

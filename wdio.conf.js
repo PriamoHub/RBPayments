@@ -13,15 +13,15 @@ exports.config = {
     // ...
     // define specific suites
     suites: {
+
+        signUp: [
+            './test/signupTest.js',
+            './test/signupBizzTest.js'
+        ],
         login: [
             './test/loginTest.js',
         ],
-        signUp: [
-            './test/signupTest.js',
-        ],
-        signUpBizz: [
-            './test/signupBizzTest.js',
-        ],
+
         All: [
             './test/*.js',
         ]
@@ -41,7 +41,7 @@ exports.config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 10,
+    maxInstances: 3,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -50,7 +50,7 @@ exports.config = {
     capabilities: {
         myChromeBrowser: {
             desiredCapabilities: {
-                browserName: 'chrome'
+                browserName: 'firefox'
             }
         },
         /*myFirefoxBrowser: {
@@ -68,7 +68,7 @@ exports.config = {
     // By default WebdriverIO commands are executed in a synchronous way using
     // the wdio-sync package. If you still want to run your tests in an async way
     // e.g. using promises you can set the sync option to false.
-    sync: true,
+      sync: true,
     //
     // Level of logging verbosity: silent | verbose | command | data | result | error
     logLevel: 'silent',
