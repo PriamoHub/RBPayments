@@ -68,7 +68,21 @@ class Signup extends Page {
       invalidLegalName(){
         browser.waitForExist("[ng-show='userForm.OperatingName.$error.required && submitted']"); }
 
-    //Buttons
+        //Address
+        invalidAdress(){
+          browser.waitForExist("[ng-show='userForm.Address1.$error.required && submitted']"); }
+        invalidCity(){
+          browser.waitForExist("[ng-show='userForm.City.$error.required && submitted']"); }
+        invalidProvince(){
+          browser.waitForExist("[ng-show='userForm.Province.$error.required && submitted']"); }
+        invalidCountry(){
+          browser.waitForExist("[ng-show='userForm.Country.$error.required && submitted']"); }
+        invalidPostalCode(){
+          browser.waitForExist("[ng-show='userForm.PostalCode.$error.required && submitted']"); }
+
+
+
+        //Buttons
 
     openSignup() {
         super.open('#/signup');
@@ -88,6 +102,6 @@ class Signup extends Page {
 
     addressDetails() {
     browser.click("[data-target='#addressDetails']");
-    browser.waitForEnabled("[name='Address2']"); }
+    browser.waitForVisible("[name='Address2']"); }
 }
 module.exports = new Signup();
