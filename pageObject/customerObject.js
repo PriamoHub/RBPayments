@@ -45,6 +45,7 @@ class Customer extends Page {
       }
 
       addCustomer()  {
+
         browser.click("[ng-click='submit()']");
       }
 
@@ -57,8 +58,9 @@ class Customer extends Page {
       }
 
 
-addCustomer() {
-browser.click("[href='#/customers/create']");
-  }
+createCustomer() {
+  browser.waitForExist("[href='#/customers/create']");
+  browser.click("[href='#/customers/create']"); }
+
 }
 module.exports = new Customer();
