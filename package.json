@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "wdio wdio.conf.js --suite"
+    "suite": "wdio wdio.conf.js --suite",
+    "test":"wdio wdio.conf.js --spec"
   },
   "keywords": [],
   "author": "",

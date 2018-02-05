@@ -65,7 +65,7 @@ class Signup extends Page {
 
       invalidLegalName(){
         browser.waitForExist("[ng-show='userForm.LegalName.$error.required && submitted']"); }
-      invalidLegalName(){
+      invalidOperatingName(){
         browser.waitForExist("[ng-show='userForm.OperatingName.$error.required && submitted']"); }
 
         //Address
@@ -79,8 +79,6 @@ class Signup extends Page {
           browser.waitForExist("[ng-show='userForm.Country.$error.required && submitted']"); }
         invalidPostalCode(){
           browser.waitForExist("[ng-show='userForm.PostalCode.$error.required && submitted']"); }
-
-
 
         //Buttons
 
