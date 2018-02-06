@@ -1,0 +1,11 @@
+dist: trusty
+language: node_js
+
+node_js:
+  - '6.10'
+
+before_script:
+  - npm install
+
+script:
+- npm test suite All
