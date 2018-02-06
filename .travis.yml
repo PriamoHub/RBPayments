@@ -2,10 +2,14 @@ dist: trusty
 language: node_js
 
 node_js:
-  - '6.10'
+  - '9.2.0'
 
 before_script:
   - npm install
 
 script:
 - npm run suite All
+
+sudo: required
+addons:
+  chrome: stable
