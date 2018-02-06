@@ -6,10 +6,11 @@ node_js:
 
 before_script:
   - npm install
+  - npm update
 
 script:
 - npm run suite All
 
-sudo: required
+sudo: false
 addons:
   chrome: stable
