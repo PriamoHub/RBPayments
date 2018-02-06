@@ -6,6 +6,8 @@ node_js:
 
 before_script:
   - npm install
+  - npm uninstall fibers
+  - npm install fibers
   - npm update
 
 script:

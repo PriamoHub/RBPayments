@@ -1,8 +1,8 @@
 var expect = require('chai').expect;
 var Customer = require('../pageObject/customerObject.js');
-var Login = require('../pageObject/loginObject.js')
-var Dashboard = require ('../pageObject/dashboardObject.js')
-
+var Login = require('../pageObject/loginObject.js');
+var Dashboard = require ('../pageObject/dashboardObject.js');
+var webdriverio = require('webdriverio');
 
 
 describe('RBPayments - Add Customer Automated Testing', function () {
@@ -26,7 +26,7 @@ describe('RBPayments - Add Customer Automated Testing', function () {
           Customer.lastName = "Doe";
           Customer.phoneNumber = "7178888888";
           Customer.taxNumber = "123123123123123";
-          Customer.email = "."
+          Customer.email = ".";
           Customer.addCustomer();
           Customer.invalidEmail();
         });
@@ -69,7 +69,7 @@ describe('RBPayments - Add Customer Automated Testing', function () {
           Customer.firstName = "John";
           Customer.lastName = "Doe";
           Customer.phoneNumber = "7178888888";
-          Customer.taxNumber = "123"
+          Customer.taxNumber = "123";
           Customer.addCustomer();
           Customer.invalidTax();
         });
@@ -79,7 +79,7 @@ describe('RBPayments - Add Customer Automated Testing', function () {
           Customer.firstName = "John";
           Customer.lastName = "Doe";
           Customer.phoneNumber = "7178888888";
-          Customer.taxNumber = "123123123123123"
+          Customer.taxNumber = "123123123123123";
           Customer.addCustomer();
         });
 
@@ -89,7 +89,7 @@ describe('RBPayments - Add Customer Automated Testing', function () {
           Customer.firstName = "John";
           Customer.lastName = "Doe";
           Customer.phoneNumber = "7178888888";
-          Customer.taxNumber = "123123123123123"
+          Customer.taxNumber = "123123123123123";
           Customer.billAutomatic();
           Customer.addCustomer();
         });
@@ -173,7 +173,7 @@ describe('RBPayments - Add Business Customer Automated Testing', function () {
           Customer.firstName = "John";
           Customer.lastName = "Doe";
           Customer.phoneNumber = "7178888888";
-          Customer.taxNumber = "123"
+          Customer.taxNumber = "123";
           Customer.addCustomer();
           Customer.invalidTax();
         });
@@ -210,7 +210,7 @@ describe('RBPayments - Add Business Customer Automated Testing', function () {
           Customer.firstName = "John";
           Customer.lastName = "Doe";
           Customer.phoneNumber = "7178888888";
-          Customer.taxNumber = "123123123123123"
+          Customer.taxNumber = "123123123123123";
           Customer.addCustomer();
         });
 
@@ -223,7 +223,7 @@ describe('RBPayments - Add Business Customer Automated Testing', function () {
           Customer.firstName = "John";
           Customer.lastName = "Doe";
           Customer.phoneNumber = "7178888888";
-          Customer.taxNumber = "123123123123123"
+          Customer.taxNumber = "123123123123123";
           Customer.billAutomatic();
           Customer.addCustomer();
         });
