@@ -50,7 +50,7 @@ exports.config = {
     capabilities: {
         myChromeBrowser: {
             desiredCapabilities: {
-                browserName: 'chrome'
+                browserName: 'firefox'
             }
         },
         /*myFirefoxBrowser: {
