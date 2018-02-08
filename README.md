@@ -1,4 +1,4 @@
-# Mediseen Automation
+# RBPayments Automation
 
 ## Terms
 
