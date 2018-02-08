@@ -11,6 +11,7 @@ dashboard(){
 }
 customer(){
   browser.click("[href='#/customers/list']");
+  browser.waitForEnabled("[ng-model='searchTerm']");
 }
 subscription(){
   browser.click("[href='#/subscriptions/list/received/all']");
