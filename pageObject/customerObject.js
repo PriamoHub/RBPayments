@@ -19,6 +19,11 @@ class Customer extends Page {
       get legalName()                    { return $("[name='LegalName']").getValue(); }
       set legalName(v)                   {        $("[name='LegalName']").setValue(v); }
 
+      get searchBar()                    { return $("[ng-model='searchTerm']").getValue(); }
+      set searchBar(v)                   {        $("[ng-model='searchTerm']").setValue(v); }
+
+
+
       //Address details
 
       get address()                  { return $("[name='Address1']").getValue(); }
@@ -35,24 +40,28 @@ class Customer extends Page {
       get country()                  { return $("[name='Country']").getText('option:checked'); }
 
       setAddress() {
-        browser.click("[ng-model='setAddress']");      }
-
+      browser.click("[ng-model='setAddress']");      }
       billAutomatic() {
-        browser.click("body > div.page-container > div.page-content-wrapper > div > div > div.portlet.box.blue-hoki.ng-scope > div.portlet-body.form > form > div.form-body > div:nth-child(3) > div > label:nth-child(2) > div > span > input");      }
-
+      browser.click("body > div.page-container > div.page-content-wrapper > div > div > div.portlet.box.blue-hoki.ng-scope > div.portlet-body.form > form > div.form-body > div:nth-child(3) > div > label:nth-child(2) > div > span > input");      }
       selectBusiness() {
-        browser.click("[value='Personal']");      }
-
+      browser.click("[value='Personal']");      }
       addCustomer()  {
-        browser.waitForEnabled("[ng-click='submit()']");
-        browser.click("[ng-click='submit()']");     }
-
+      browser.waitForEnabled("[ng-click='submit()']");
+      browser.click("[ng-click='submit()']");     }
       bizAccount() {
-        browser.click("[value='Business']");
-        browser.waitForVisible("[name='LegalName']"); }
-
+      browser.click("[value='Business']");
+      browser.waitForVisible("[name='LegalName']"); }
       addressDetails() {
-        browser.click("[data-target='#addressDetails']");      }
+      browser.click("[data-target='#addressDetails']");      }
+
+      //Function that searches a customer to edit, and opens profile
+      editCustomer(searchBar){
+        browser.waitForVisible("[ng-model='searchTerm']");
+        browser.setValue("[ng-model='searchTerm']",searchBar);
+        browser.waitForVisible("[ng-click='viewCustomer(customer)']");
+        browser.click("[ng-click='viewCustomer(customer)']");
+        browser.waitForVisible("[ng-click='deleteCustomer(selectedCustomer)']");
+      }
 
         invalidEmail(){
           browser.waitForExist("[ng-show='(userForm.EmailAddress.$error.Email || userForm.EmailAddress.$error.pattern) && submitted']"); }
