@@ -7,13 +7,13 @@ exports.config = {
     user: 'Priamo',
     key: 'c41ce2bb-40b1-4b1d-9356-2420ddf44af9',
 
-
+*/
  //crossbrowsertesting
    host: "hub.crossbrowsertesting.com",
    port: 80,
    user: 'priamo.ramirez@testlauncher.com',		// the email address associated with your CBT account
    key: 'u59834cd1b764544',
-*/
+
 
     // ==================
     // Specify Test Files
