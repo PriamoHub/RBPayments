@@ -154,12 +154,12 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: http://webdriver.io/guide/testrunner/reporters.html
-    reporters: ['allure','spec'],
-        reporterOptions: {
-    		allure: {
-    			outputDir: 'allure-results'
-    		}
-    	},
+    reporters: ['dot', 'allure'],
+       reporterOptions: {
+           allure: {
+               outputDir: 'allure-results'
+           }
+       },
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
