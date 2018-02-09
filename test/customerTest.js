@@ -21,7 +21,7 @@ describe('RBPayments - Add Customer Automated Testing', function () {
           Customer.createCustomer();
         });
 
-        it('Sign Up with invalid Emails', function () {
+        it('Create Customer with invalid Emails', function () {
           Customer.firstName = "John";
           Customer.lastName = "Doe";
           Customer.phoneNumber = "7178888888";
@@ -31,7 +31,7 @@ describe('RBPayments - Add Customer Automated Testing', function () {
           Customer.invalidEmail();
         });
 
-        it('Sign Up without Name', function () {
+        it('Create Customer without Name', function () {
           Customer.firstName = "";
           Customer.email = "JohnDoeTL@yopmail.com";
           Customer.lastName = "Doe";
@@ -42,7 +42,7 @@ describe('RBPayments - Add Customer Automated Testing', function () {
           Customer.invalidName();
         });
 
-        it('Sign Up without Last Name', function () {
+        it('Create Customer without Last Name', function () {
           Customer.email = "JohnDoeTL@yopmail.com";
           Customer.firstName = "John";
           Customer.lastName = "";
@@ -53,7 +53,7 @@ describe('RBPayments - Add Customer Automated Testing', function () {
           Customer.invalidLastName();
         });
 
-        it('Sign Up without Phone Number', function () {
+        it('Create Customer without Phone Number', function () {
           Customer.email = "JohnDoeTL@yopmail.com";
           Customer.firstName = "John";
           Customer.lastName = "Doe";
@@ -64,7 +64,7 @@ describe('RBPayments - Add Customer Automated Testing', function () {
           Customer.invalidPhone();
         });
 
-        it('Sign Up with invalid tax', function () {
+        it('Create Customer with invalid tax', function () {
           Customer.email = "JohnDoeTL@yopmail.com";
           Customer.firstName = "John";
           Customer.lastName = "Doe";
@@ -74,7 +74,7 @@ describe('RBPayments - Add Customer Automated Testing', function () {
           Customer.invalidTax();
         });
 
-        it('Sign Up with Valid Details', function () {
+        it('Create Customer with Valid Details', function () {
           Customer.email = "JohnDoeTL@yopmail.com";
           Customer.firstName = "John";
           Customer.lastName = "Doe";
@@ -83,7 +83,7 @@ describe('RBPayments - Add Customer Automated Testing', function () {
           Customer.addCustomer();
         });
 
-        it('Sign Up with Valid Details with Do not bill this user automatically', function () {
+        it('Create Customer with Valid Details with Do not bill this user automatically', function () {
           Customer.createCustomer();
           Customer.email = "JohnDoeTL@yopmail.com";
           Customer.firstName = "John";
@@ -113,7 +113,7 @@ describe('RBPayments - Add Business Customer Automated Testing', function () {
           Customer.createCustomer();
         });
 
-        it('Sign Up with invalid Emails', function () {
+        it('Create Customer with invalid Emails', function () {
           Customer.bizAccount();
           Customer.operatingName = "John Doe";
           Customer.legalName = "John Doe";
@@ -126,7 +126,7 @@ describe('RBPayments - Add Business Customer Automated Testing', function () {
           Customer.invalidEmail();
         });
 
-        it('Sign Up without Name', function () {
+        it('Create Customer without Name', function () {
           Customer.legalName = "John Doe";
           Customer.operatingName = "John Doe";
           Customer.firstName = "";
@@ -140,7 +140,7 @@ describe('RBPayments - Add Business Customer Automated Testing', function () {
           Customer.invalidName();
         });
 
-        it('Sign Up without Last Name', function () {
+        it('Create Customer without Last Name', function () {
           Customer.legalName = "John Doe";
           Customer.operatingName = "John Doe";
           Customer.email = "JohnDoeTL@yopmail.com";
@@ -153,7 +153,7 @@ describe('RBPayments - Add Business Customer Automated Testing', function () {
           Customer.invalidLastName();
         });
 
-        it('Sign Up without Phone Number', function () {
+        it('Create Customer without Phone Number', function () {
           Customer.legalName = "John Doe";
           Customer.operatingName = "John Doe";
           Customer.email = "JohnDoeTL@yopmail.com";
@@ -166,7 +166,7 @@ describe('RBPayments - Add Business Customer Automated Testing', function () {
           Customer.invalidPhone();
         });
 
-        it('Sign Up with invalid tax', function () {
+        it('Create Customer with invalid tax', function () {
           Customer.legalName = "John Doe";
           Customer.operatingName = "John Doe";
           Customer.email = "JohnDoeTL@yopmail.com";
@@ -178,7 +178,7 @@ describe('RBPayments - Add Business Customer Automated Testing', function () {
           Customer.invalidTax();
         });
 
-        it('Sign Up with invalid Operating Name', function () {
+        it('Create Customer with invalid Operating Name', function () {
           Customer.legalName = "John Doe";
           Customer.operatingName = "";
           Customer.email = "JohnDoeTL@yopmail.com";
@@ -190,7 +190,7 @@ describe('RBPayments - Add Business Customer Automated Testing', function () {
           Customer.invalidOperatingName();
         });
 
-        it('Sign Up with invalid Legal Name', function () {
+        it('Create Customer with invalid Legal Name', function () {
           Customer.legalName = "";
           Customer.operatingName = "John Doe";
           Customer.email = "JohnDoeTL@yopmail.com";
@@ -203,7 +203,7 @@ describe('RBPayments - Add Business Customer Automated Testing', function () {
         });
 
 
-        it('Sign Up with Valid Details', function () {
+        it('Create Customer with Valid Details', function () {
           Customer.legalName = "John Doe";
           Customer.operatingName = "John Doe";
           Customer.email = "JohnDoeTL@yopmail.com";
@@ -214,7 +214,7 @@ describe('RBPayments - Add Business Customer Automated Testing', function () {
           Customer.addCustomer();
         });
 
-        it('Sign Up with Valid Details with Do not bill this user automatically', function () {
+        it('Create Customer with Valid Details with Do not bill this user automatically', function () {
           Customer.createCustomer();
           Customer.bizAccount();
           Customer.legalName = "John Doe";
