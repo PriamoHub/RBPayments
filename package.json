@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "suite": "wdio wdio.conf.js --suite",
-    "test":"wdio wdio.conf.js --spec"
+    "test": "wdio wdio.conf.js --spec"
   },
   "keywords": [],
   "author": "",

@@ -1,6 +1,20 @@
 exports.config = {
 
     //
+ /* Sauce Labs Configurations
+    host: 'ondemand.saucelabs.com',
+	  port: 80,
+    user: 'Priamo',
+    key: 'c41ce2bb-40b1-4b1d-9356-2420ddf44af9',
+
+    */
+ //crossbrowsertesting
+   host: "hub.crossbrowsertesting.com",
+   port: 80,
+   user: 'priamo.ramirez@testlauncher.com',		// the email address associated with your CBT account
+   key: 'u59834cd1b764544',
+
+
     // ==================
     // Specify Test Files
     // ==================
@@ -119,7 +133,8 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['selenium-standalone'],
+    //services: ['selenium-standalone'],
+    services: ['sauce'],
 
 
    // user: process.env.SAUCE_USERNAME,
