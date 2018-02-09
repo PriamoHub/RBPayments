@@ -16,7 +16,7 @@ describe('RBPayments - Add Card to Profile - Automated Testing', function () {
     Login.successLogin();
     });
 
-  it('Add Card to Profile', function () {
+/*  it('Add Card to Profile', function () {
     Dashboard.myCard();
     Card.addCard();
     Card.cardNumber = "4242424242424242";
@@ -30,4 +30,5 @@ describe('RBPayments - Add Card to Profile - Automated Testing', function () {
     Card.postcalCode = "M5V2T6";
     Card.save();
     });
+    */
 });

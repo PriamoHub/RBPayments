@@ -16,10 +16,11 @@ describe('RBPayments - Edit Customer Automated Testing', function () {
           Login.successLogin();
         });
 
-        it('Edit Customer - Search Customer', function () {
+  /*      it('Edit Customer - Search Customer', function () {
           Dashboard.customer();
           Customer.editCustomer("Priamo Ramirez");
           Customer.firstName = "Test";
         });
+        */
 
 });

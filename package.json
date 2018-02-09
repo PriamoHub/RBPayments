@@ -16,6 +16,7 @@
     "extend": "^3.0.1",
     "mocha": "^3.5.0",
     "nodejs": "0.0.0",
+    "wdio-allure-reporter": "^0.3.2",
     "wdio-mocha-framework": "^0.5.11",
     "wdio-sauce-service": "^0.4.8",
     "wdio-selenium-standalone-service": "0.0.9",
