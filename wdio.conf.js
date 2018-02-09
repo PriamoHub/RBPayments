@@ -7,13 +7,13 @@ exports.config = {
     user: 'Priamo',
     key: 'c41ce2bb-40b1-4b1d-9356-2420ddf44af9',
 
-    */
+
  //crossbrowsertesting
    host: "hub.crossbrowsertesting.com",
    port: 80,
    user: 'priamo.ramirez@testlauncher.com',		// the email address associated with your CBT account
    key: 'u59834cd1b764544',
-
+*/
 
     // ==================
     // Specify Test Files
@@ -55,24 +55,17 @@ exports.config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
+
     maxInstances: 3,
-    //
-    // If you have trouble getting all important capabilities together, check out the
-    // Sauce Labs platform configurator - a great tool to configure your capabilities:
-    // https://docs.saucelabs.com/reference/platforms-configurator
-    //
-    capabilities: {
-        myChromeBrowser: {
-            desiredCapabilities: {
-                browserName: 'firefox'
-            }
-        },
-        /*myFirefoxBrowser: {
-            desiredCapabilities: {
-                browserName: 'firefox'
-            }
-        }*/
-    },
+
+    capabilities: [{
+      // maxInstances can get overwritten per capability. So if you have an in-house Selenium
+      // grid with only 5 firefox instances available you can make sure that not more than
+      // 5 instances get started at a time.
+      maxInstances: 2,
+      //
+      browserName: 'chrome'
+  }],
     //
     // ===================
     // Test Configurations
@@ -133,8 +126,8 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    //services: ['selenium-standalone'],
-    services: ['sauce'],
+    services: ['selenium-standalone'],
+    //services: ['sauce'],
 
 
    // user: process.env.SAUCE_USERNAME,
